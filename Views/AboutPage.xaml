@@ -9,17 +9,39 @@
     <ContentPage.BindingContext>
         <viewModels:AboutViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout Spacing="10" Margin="10">
-        <HorizontalStackLayout Spacing="10">
-            <Image Source="dotnet_bot.png"
-                   SemanticProperties.Description="The dot net bot waving hello!"
-                   HeightRequest="64" />
-            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
-            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
-        </HorizontalStackLayout>
 
-        <Label Text="{Binding Message}" />
-        <Button Text="Learn more..." Command="{Binding ShowMoreInfoCommand}" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Margin="10" Padding="0,0,0,10">
+
+            <HorizontalStackLayout Spacing="10">
+                <Image Source="icon.png"
+                       SemanticProperties.Description="The dot net bot waving hello!"
+                       HeightRequest="64" />
+                <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
+                <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
+            </HorizontalStackLayout>
+
+            <Label FontSize="16" FontAttributes="Bold" Text="Features" />
+            <VerticalStackLayout Spacing="5" Margin="10,0,0,0">
+                <Label Text="•  View All Notes: A main page displays a collection of all saved notes."/>
+                <Label Text="•  Create &amp; Edit Notes: Users can create a new note or select an existing note."/>
+                <Label Text="•  Save Notes: Notes are saved to the device's application data directory."/>
+                <Label Text="•  Delete Notes: Notes can be deleted from the editor page."/>
+                <Label Text="•  Navigation: Uses .NET MAUI's Shell with a TabBar."/>
+            </VerticalStackLayout>
+
+            <Label FontSize="16" FontAttributes="Bold" Text="Technology Stack" Margin="0,10,0,0"/>
+            <VerticalStackLayout Spacing="5" Margin="10,0,0,0">
+                <Label Text="•  .NET 9"/>
+                <Label Text="•  .NET MAUI"/>
+                <Label Text="•  C# &amp; XAML"/>
+                <Label Text="•  MVVM Pattern (using CommunityToolkit.Mvvm)"/>
+                <Label Text="•  Cross-platform: Targets Android, iOS, MacCatalyst, and Windows."/>
+            </VerticalStackLayout>
+
+            <Button Text="Learn more..." Command="{Binding ShowMoreInfoCommand}" Margin="0,10,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

@@ -7,6 +7,28 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Notes">
 
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"
+                       Source="{Binding Icon}"
+                       HeightRequest="24"
+                       WidthRequest="24"
+                       HorizontalOptions="Center"
+                       SemanticProperties.Description="{Binding Title}" />
+
+                <Label Grid.Row="1"
+                       Text="{Binding Title}"
+                       FontSize="16"  HorizontalOptions="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
     <TabBar>
         <ShellContent
             Title="Notes"
@@ -18,6 +40,5 @@
             ContentTemplate="{DataTemplate local:AboutPage}"
             Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
     </TabBar>
-
 
 </Shell>

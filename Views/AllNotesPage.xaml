@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Lab_3.ViewModels"
              x:Class="Lab_3.Views.AllNotesPage"
-             Title="Your Notes"
+             Title="Alvin's Notes"
              NavigatedTo="ContentPage_NavigatedTo"
              x:DataType="viewModels:NotesViewModel">
     
